@@ -1,0 +1,53 @@
+﻿class program
+{
+    static void Main(string[] args)
+    {
+        int[] userNumberStorage = new int[1];
+        int indexUserNumberStorage = 0;
+        string sumOfNumberStorage = "sum";
+        string exit = "exit";
+        bool isExit = false;
+        string userInput;
+        int sumOfNumberUserNumberStorage = 0;
+
+        Console.WriteLine($"Добро пожаловать в хранилище чисел!\nДля записи просто введите любое число." +
+            $"\nЧтобы расчитать сумму всех записаных чисел введите команду {sumOfNumberStorage}." +
+            $"\nДля выхода из программы введите команду {exit}");
+
+        while (isExit == false)
+        {
+            Console.WriteLine("Введите число или команду: ");
+            userInput = Console.ReadLine();
+            Console.WriteLine(userInput);
+
+            if (userInput == sumOfNumberStorage)
+            {
+
+                for (indexUserNumberStorage = 0; indexUserNumberStorage < userNumberStorage.Length; indexUserNumberStorage++)
+                {
+                    sumOfNumberUserNumberStorage += userNumberStorage[indexUserNumberStorage];
+                }
+            }
+            else if (userInput == exit)
+            {
+                isExit = true;
+            }
+
+            if (userInput != sumOfNumberStorage || userInput != exit)
+            {
+                int[] temporaryUserNumberStorage = new int[userNumberStorage.Length + 1];
+
+                for (indexUserNumberStorage = 0; indexUserNumberStorage < userNumberStorage.Length; indexUserNumberStorage++)
+                {
+                    temporaryUserNumberStorage[indexUserNumberStorage] = userNumberStorage[indexUserNumberStorage];
+                }
+       
+                temporaryUserNumberStorage[temporaryUserNumberStorage.Length - 1] = Convert.ToInt32(userInput);
+                userNumberStorage = temporaryUserNumberStorage;
+            }
+
+
+        }
+
+    }
+}
