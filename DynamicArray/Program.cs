@@ -3,7 +3,6 @@
     static void Main(string[] args)
     {
         int[] userNumberStorage = new int[0];
-        
         int indexUserNumberStorage = 0;
         string sumOfNumberStorage = "sum";
         string exit = "exit";
