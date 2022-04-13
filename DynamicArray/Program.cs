@@ -2,7 +2,8 @@
 {
     static void Main(string[] args)
     {
-        int[] userNumberStorage = new int[1];
+        int[] userNumberStorage = new int[0];
+        int[] temporaryUserNumberStorage = new int[userNumberStorage.Length + 1];
         int indexUserNumberStorage = 0;
         string sumOfNumberStorage = "sum";
         string exit = "exit";
@@ -27,16 +28,14 @@
                 {
                     sumOfNumberUserNumberStorage += userNumberStorage[indexUserNumberStorage];
                 }
+                Console.WriteLine(sumOfNumberUserNumberStorage);
             }
             else if (userInput == exit)
             {
                 isExit = true;
             }
-
-            if (userInput != sumOfNumberStorage || userInput != exit)
+            else
             {
-                int[] temporaryUserNumberStorage = new int[userNumberStorage.Length + 1];
-
                 for (indexUserNumberStorage = 0; indexUserNumberStorage < userNumberStorage.Length; indexUserNumberStorage++)
                 {
                     temporaryUserNumberStorage[indexUserNumberStorage] = userNumberStorage[indexUserNumberStorage];
